@@ -1,4 +1,5 @@
 class RoofsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_roof, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,7 +7,7 @@ class RoofsController < ApplicationController
   end
 
   def show
-
+   @roof
   end
 
   def new
@@ -15,8 +16,9 @@ class RoofsController < ApplicationController
 
   def create
     @roof = Roof.new(roof_params)
-    if @roof.save
-      redirect_to roof_path(@roof)
+    @roof.user = current_user
+    if @roof.save!
+      redirect_to roofs_path
     else
       render :new
     end
@@ -24,8 +26,11 @@ class RoofsController < ApplicationController
 
   def update
     @roof.update(roof_params)
-    @roof.save
+    @roof.save!
     redirect_to roof_path(@roof)
+  end
+
+  def destroy
   end
 
   private
