@@ -11,7 +11,7 @@ end
 
 def edit
  respond_to do |format|
-      if @rooftop.update(restaurant_params)
+      if @rooftop.update(rooftop_params)
         format.html { redirect_to @rooftop, notice: 'Rooftop was successfully updated.' }
         format.json { render :show, status: :ok, location: @rooftop }
       else
@@ -24,8 +24,8 @@ end
 def update
  respond_to do |format|
       if @rooftop.update(rooftop_params)
-        format.html { redirect_to @rooftop, notice: 'Restaurant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @restaurant }
+        format.html { redirect_to @rooftop, notice: 'rooftop was successfully updated.' }
+        format.json { render :show, status: :ok, location: @rooftop }
       else
         format.html { render :edit }
         format.json { render json: @rooftop.errors, status: :unprocessable_entity }
@@ -46,11 +46,11 @@ def create
 
     respond_to do |format|
       if @rooftop.save
-        format.html { redirect_to @restaurant, notice: 'Rooftop was successfully created.' }
+        format.html { redirect_to @rooftop, notice: 'Rooftop was successfully created.' }
         format.json { render :show, status: :created, location: @rooftop }
       else
         format.html { render :new }
-        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
+        format.json { render json: @rooftop.errors, status: :unprocessable_entity }
       end
     end
 end
@@ -65,7 +65,7 @@ def set_rooftop
 end
 
  def rooftop_params
-      params.require(:rooftop).permit(:name, :address, :description, :stars, :chef)
+      params.require(:rooftop).permit(:name, :location, :price, :user_id)
     end
 
 end
