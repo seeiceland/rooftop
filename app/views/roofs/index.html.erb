@@ -1,25 +1,23 @@
+<div class="main-container"><h1>Rooftops</h1>
+  <div class="container">
+    <div class="row">
+      <% @roofs.each do |roof| %>
+        <div class="col-xs-12 col-sm-4 col-md-3 main-card">
 
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('http://dubaitravelblog.com/wp-content/uploads/2017/02/best-rooftop-bars-in-Dubai.jpg');">
+            <div class="card-category">
+              <h3> <%=roof.name%> </h3>
 
-<h1>Rooftops</h1>
-<div class="container">
-  <div class="row">
-    <% @roofs.each do |roof| %>
-      <div class="col-xs-12 col-sm-4 col-md-3 main-card">
+              </div>
+            <div class="card-description">
+              <p> Location :<%= roof.location %>
 
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('http://dubaitravelblog.com/wp-content/uploads/2017/02/best-rooftop-bars-in-Dubai.jpg');">
-          <div class="card-category">
-            <h3> <%=roof.name%> </h3>
-
+              <br> Price :<%= roof.price %> NIS</p>
             </div>
-          <div class="card-description">
-            <p> Location :<%= roof.location %>
-
-            <br> Price :<%= roof.price %> NIS</p>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <%= link_to "Add a new Rooftop", new_roof_path, class: "btn btn-danger" %>
   </div>
-  <%= link_to "Add a new Rooftop", new_roof_path, class: "btn btn-danger" %>
 </div>
-
