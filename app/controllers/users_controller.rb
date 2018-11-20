@@ -10,9 +10,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = current_user
     @user.update(user_params)
     @user.save!
-    redirect_to user_path(@user)
+    redirect_to dashboard_path
   end
 
   def destroy
