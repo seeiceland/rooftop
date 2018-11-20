@@ -8,15 +8,25 @@
   justify-content: space-between;
 }
 
-/* Logo */
+/* Name */
 .navbar-wagon-brand {
   margin-top: 10px;
 }
 
-/* User Avatar */
-.navbar-wagon .avatar {
+.logo-div {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-wagon .logo {
   height: 50px;
   width: 50px;
+}
+
+/* User Avatar */
+.navbar-wagon .avatar {
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 3px 0;
 }
@@ -75,8 +85,25 @@
   border-top: 1px solid #E6E6E6;
 }
 
+/*NAVBAR 2 first pages*/
 .navbar-default {
   background: transparent;
 }
 
+/*NAVBAR other pages*/
+.navbar-white {
+  background-color: white;
+  box-shadow:  0 1px 7px rgba(0,0,0,.05);
+  h7 {
+    color: black;
+    margin-top: 7px;
+  }
+  input {
+    position:relative;
+    left: -165%;
+    top:25%;
+    width:340px;
+    height: 30px;
+  }
+}
 
