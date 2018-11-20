@@ -1,7 +1,7 @@
 class RoofsController < ApplicationController
-  layout "application"
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_roof, only: [:show, :edit, :update, :destroy]
+
   layout 'map', only: :index
 
 
