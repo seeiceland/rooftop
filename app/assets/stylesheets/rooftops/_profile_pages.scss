@@ -1,0 +1,156 @@
+#avatar-large {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.cover-profile {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+/* CARD PROFILE CSS*/
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #D4D5D8;
+  background-clip: border-box;
+  border: 2px solid;
+  border-radius: 4px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  margin-top: -(10px / 2);
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link :hover{
+    text-decoration: none;
+
+  .card-link {
+    margin-left: 10px;
+  }
+}
+
+.card-header {
+  padding: 10px;
+  margin-bottom: 0;
+  background-color: #D4D5D8;
+  border-bottom: 2px solid #BCBDBF;
+
+  &:first-child {
+    border-radius: 4px 4px 0 0;
+  }
+
+  + .list-group {
+    .list-group-item:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.card-footer {
+  padding: 10px 10px;
+  background-color: #D4D5D8;
+  border-top: 2px solid #BCBDBF;
+
+  &:last-child {
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+.card-header-tabs {
+  margin-right: -(10px / 2);
+  margin-bottom: -10px;
+  margin-left: -(10px / 2);
+  border-bottom: 0;
+}
+
+.card-header-pills {
+  margin-right: -(10px / 2);
+  margin-left: -(10px / 2);
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card-img-top {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card-img-bottom {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card-deck {
+  display: flex;
+  flex-direction: column;
+
+  .card {
+    margin-bottom: 10px;
+  }
+  .card {
+    display: flex;
+    flex: 1 0 0%;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+  > .card {
+    margin-bottom: 10px;
+  }
+  > .card {
+    margin-bottom: 0;
+
+    .card {
+      margin-left: 0;
+      border-left: 0;
+    }
+  }
+}
+
+.card-columns {
+  .card {
+    margin-bottom: 10px;
+  }
+  .card {
+    display: inline-block;
+    width: 100%;
+  }
+}

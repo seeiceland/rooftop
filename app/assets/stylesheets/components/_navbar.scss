@@ -2,10 +2,17 @@
 .navbar-wagon {
   transition: all 0.3s ease;
   height: 60px;
-  padding: 0px 30px;
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  a {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  margin-bottom: 30px;
 }
 
 /* Name */
@@ -88,19 +95,24 @@
 /*NAVBAR 2 first pages*/
 .navbar-default {
   background: transparent;
+  h7 {
+    color: black;
+    margin-top: 7px;
+  }
 }
 
 /*NAVBAR other pages*/
 .navbar-white {
   background-color: white;
   box-shadow:  0 1px 7px rgba(0,0,0,.05);
+
   h7 {
     color: black;
     margin-top: 7px;
   }
   input {
     position:relative;
-    left: -165%;
+    left: -170%;
     top:25%;
     width:340px;
     height: 30px;
