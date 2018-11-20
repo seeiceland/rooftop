@@ -112,5 +112,5 @@ end
   def roof_params
     params.require(:roof).permit(:name, :location, :price)
   end
->>>>>>> 1b2bb1078ef94555914472b1681f4c40bd991e7c
+
 end
