@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get 'search', to: 'pages#search'
+  get 'dashboard', to: 'users#profile'
   resources :roofs
 end

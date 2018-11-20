@@ -1,0 +1,14 @@
+.map-wrapper {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+#roofs {
+  width: 70%;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+#map {
+  width: 30%;
+}
