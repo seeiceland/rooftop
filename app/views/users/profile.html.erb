@@ -3,7 +3,7 @@
     <div class="col-md-3 ">
       <div class="list-group ">
           <img src="https://image.ibb.co/m1jNkL/icon.jpg" id="avatar-large" class="cover-profile">
-        <a href="#" class="list-group-item list-group-item-action active">Your profile</a>
+        <a href="#" class="list-group-item list-group-item-action active color">Your profile</a>
         <a href="#" class="list-group-item list-group-item-action">Rooftop rent</a>
       </div>
     </div>
@@ -18,60 +18,21 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <form>
-                <div class="form-group row">
-                  <label for="name" class="col-4 col-form-label">First Name</label>
-                  <div class="col-8">
-                    <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="lastname" class="col-4 col-form-label">Last Name</label>
-                  <div class="col-8">
-                    <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="lastname" class="col-4 col-form-label">Gender</label>
-                  <div class="col-8">
+              <%= simple_form_for(@user) do |f| %>
+                <div class="form-inputs">
+                  <%= f.input :first_name %>
+                  <%= f.input :last_name %>
+                  <%= f.input :email %>
+                  <%= f.submit 'Update', class: 'btn btn-start center' %>
 
-                    <input type="radio" name="gender" id="male" value="male" checked>
-                    <label for="male">Male</label><br>
+                </div>
 
-                    <input type="radio" name="gender" id="female" value="female">
-                    <label for="female">Female</label>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="email" class="col-4 col-form-label">Email*</label>
-                  <div class="col-8">
-                    <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="newpass" class="col-4 col-form-label">New Password</label>
-                  <div class="col-8">
-                    <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="offset-4 col-8">
-                    <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
-                  </div>
-                </div>
-              </form>
+              <%end%>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="banner-content">
-  <h1><%= @users %></h1>
-  <div class="button">
-    <%= link_to 'Start', search_path, class: "btn btn-start btn-lg" %>
   </div>
 </div>
 

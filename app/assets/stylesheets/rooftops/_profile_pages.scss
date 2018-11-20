@@ -1,6 +1,7 @@
 #avatar-large {
   width: 150px;
   border-radius: 50%;
+  box-shadow:  rgba(20,20,20, 0.8);
 }
 
 .cover-profile {
@@ -23,9 +24,25 @@
   border-radius: 4px;
 }
 
+body {
+  color: #7C7C7C;
+}
+
+
+.row h4 {
+  margin: 30px;
+}
+.form-group {
+  margin-bottom: 15px;
+  margin: 30px;
+}
+
 .card-body {
   flex: 1 1 auto;
   padding: 10px;
+  .btn-start {
+  margin-left: 300px;
+  }
 }
 
 .card-title {
@@ -64,6 +81,16 @@
       border-top: 0;
     }
   }
+}
+
+.list-group-item.active {
+  background-color:#3DCCC7;
+  border-color:#3DCCC7;
+}
+
+.list-group-item.active:hover{
+  background-color:#07BEB8;
+  border-color:#3DCCC7;
 }
 
 .card-footer {
