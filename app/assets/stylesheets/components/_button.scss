@@ -1,0 +1,35 @@
+/*Principal button*/
+.btn-start {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: lighter;
+  background: #3DCCC7;
+  transition: background 0.3s ease;
+  width: 200px;
+}
+.btn-start:hover {
+  opacity: 1;
+  background-color: #07BEB8;
+  text-decoration: none;
+  color: white;
+}
+
+/*Landing page button DIV*/
+.button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Search page button DIV*/
+.button-go {
+  margin-left: 64%;
+}
+
+
+.add {
+  margin-left: 40%;
+}

@@ -1,0 +1,21 @@
+<div class="main-container">
+  <h1>Rooftops</h1>
+  <div class="row">
+    <% @roofs.each do |roof| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class= "roof">
+          <div class="roof-image" style="background-image: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url('http://dubaitravelblog.com/wp-content/uploads/2017/02/best-rooftop-bars-in-Dubai.jpg');">
+          </div>
+          <div class="roof-content">
+            <div class= "roof-name"><%=roof.name%></div>
+            <div class="roof-description">
+              <p><%= roof.location %></p><h8><%= roof.price %> NIS</h8>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Add a new Rooftop", new_roof_path, class: "btn button btn-start add" %>
+</div>
+
