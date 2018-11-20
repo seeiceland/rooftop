@@ -1,13 +1,22 @@
 class RoofsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_roof, only: [:show, :edit, :update, :destroy]
+  layout 'map', only: :index
+
 
   def index
-    @roofs = Roof.all
+    @roofs = Roof.where.not(latitude: nil, longitude: nil)
+    @markers = @roofs.map do |roof|
+      {
+        lng: roof.longitude,
+        lat: roof.latitude,
+        infoWindow: { content: render_to_string(partial: "/roofs/map_window", locals: { roof: roof }) }
+      }
+    end
   end
 
   def show
-   @roof
+
   end
 
   def new

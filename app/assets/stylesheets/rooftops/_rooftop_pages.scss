@@ -1,3 +1,33 @@
 .main-container {
   text-align: center;
 }
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 10;
+  overflow-x: hidden;
+  padding-top: 0px;
+}
+
+.left {
+  left: 0;
+  background-color: transparent;
+}
+
+.right {
+  right: 0;
+  background-color: transparent;
+  margin-left: 0px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
