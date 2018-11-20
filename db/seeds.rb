@@ -15,11 +15,14 @@ User.create!(email: 'leah@gmail.com', password: '123456')
 puts "Created #{User.count} users!"
 
 
-Roof.create!( name: 'Tlv_roof', location: 'tel aviv', price: 5, user: random_user)
-Roof.create!( name: 'Florentin', location: 'tel aviv', price: 15, user: random_user )
-Roof.create!( name: 'Rotchild', location: 'tel aviv', price: 25, user: random_user )
-Roof.create!( name: 'Roof on the beach', location: 'tel aviv', price: 30, user: random_user )
-Roof.create!( name: 'dizengoff rooftop', location: 'tel aviv', price: 20, user: random_user )
+Roof.create!( name: 'Best Tlv', location: 'Tel-Aviv', price: 5, user: random_user)
+Roof.create!( name: 'Florentin', location: 'Tel-Aviv', price: 15, user: random_user )
+Roof.create!( name: 'Rotchild', location: 'Tel-Aviv', price: 25, user: random_user )
+Roof.create!( name: 'Beach view', location: 'Tel-Aviv', price: 30, user: random_user )
+Roof.create!( name: 'Dizengoff rooftop', location: 'Tel-Aviv', price: 20, user: random_user )
+Roof.create!( name: 'Roof face to the beach', location: 'Tel-Aviv', price: 30, user: random_user )
+Roof.create!( name: 'Azrieli rooftop', location: 'Tel-Aviv', price: 20, user: random_user )
+Roof.create!( name: 'Benyehuda Street', location: 'Tel-Aviv', price: 30, user: random_user )
 
 puts "Created #{Roof.count} rooftops!"
 

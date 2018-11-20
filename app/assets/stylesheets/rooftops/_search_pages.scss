@@ -23,10 +23,12 @@
   p{
     margin-bottom: 5px;
   }
+}
 
-  input {
-    border-radius: 5px;
-    text-indent: 5px;
-    color: black;
-  }
+input {
+  border-radius: 5px;
+  text-indent: 5px;
+  color: black;
+  border: none;
+  box-shadow: 0 0.75px 1px 0 rgba(0, 0, 0, 0.2), 0 0 2px 0 rgba(0, 0, 0, 0.19);
 }

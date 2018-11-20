@@ -1,0 +1,49 @@
+.roof {
+  margin: 20px 0;
+  width: 280px;
+  height: 280px;
+  background: white;
+  border-radius: 4px;
+  box-shadow:  0 1px 7px rgba(0,0,0,.05);
+}
+
+.roof-image {
+  height: 70%;
+  border-radius: 4px 4px 0 0;
+  background-position: 30% 70%;
+}
+
+.roof-content {
+  padding: 15px;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.roof-name {
+  font-weight: bold;
+}
+
+.roof-description {
+  font-weight: lighter;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 5px 0 0 0;
+
+  p{
+    margin:0;
+    margin-top: 5px;
+    display: inline;
+  }
+
+
+  h8 {
+    font-weight: bolder;
+    float: right;
+
+  }
+}
+
+
+
