@@ -69,7 +69,7 @@ def create
 end
 
 def new
- @rooftop = Roof.new
+  @rooftop = Roof.new
 end
 
 private
