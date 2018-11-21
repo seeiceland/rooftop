@@ -7,13 +7,19 @@ class RoofsController < ApplicationController
 
 
   def index
-    @roofs = Roof.where.not(latitude: nil, longitude: nil)
+
+    if params[:roofs][:query].present?
+    @roofs = Roof.where("location ILIKE ?", "%#{params[:roofs][:query]}%").where.not(latitude: nil, longitude: nil)
+
     @markers = @roofs.map do |roof|
       {
         lng: roof.longitude,
         lat: roof.latitude,
         infoWindow: { content: render_to_string(partial: "/roofs/map_window", locals: { roof: roof }) }
       }
+    end
+   else
+      @roofs = Roof.all
     end
   end
 
@@ -80,10 +86,6 @@ end
  def rooftop_params
       params.require(:rooftop).permit(:name, :location, :price, :user_id)
     end
-
-  layout "application"
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_roof, only: [:show, :edit, :update, :destroy]
 
 
 end
