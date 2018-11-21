@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'search', to: 'pages#search'
   get 'dashboard', to: 'users#profile'
-  resources :roofs
+  resources :roofs do
+    resources :bookings, only: :create
+  end
+  resources :bookings, only: :index
 end

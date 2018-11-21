@@ -1,11 +1,7 @@
 class RoofsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_roof, only: [ :edit, :update, :destroy]
-
+  before_action :set_roof, only: [:edit, :update, :destroy]
   layout 'map', only: :index
-
-
   def index
     @roofs = Roof.where.not(latitude: nil, longitude: nil)
     @markers = @roofs.map do |roof|
@@ -18,12 +14,12 @@ class RoofsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @rooftop = Roof.find(params[:id])
   end
 
-
-def edit
- respond_to do |format|
+  def edit
+    respond_to do |format|
       if @rooftop.update(rooftop_params)
         format.html { redirect_to @rooftop, notice: 'Rooftop was successfully updated.' }
         format.json { render :show, status: :ok, location: @rooftop }
@@ -32,10 +28,10 @@ def edit
         format.json { render json: @rooftop.errors, status: :unprocessable_entity }
       end
     end
-end
+  end
 
-def update
- respond_to do |format|
+  def update
+    respond_to do |format|
       if @rooftop.update(rooftop_params)
         format.html { redirect_to @rooftop, notice: 'rooftop was successfully updated.' }
         format.json { render :show, status: :ok, location: @rooftop }
@@ -45,19 +41,19 @@ def update
       end
     end
   end
-end
 
-def destroy
-@rooftop.destroy
-    respond_to do |format|
-      format.html { redirect_to rooftops_url, notice: 'Rooftop was successfully destroyed.' }
-      format.json { head :no_content }
-end
 
-def create
-@rooftop = Roof.new(rooftop_params)
+  def destroy
+    @rooftop.destroy
+      respond_to do |format|
+       format.html { redirect_to rooftops_url, notice: 'Rooftop was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+  end
 
-    respond_to do |format|
+  def create
+    @rooftop = Roof.new(rooftop_params)
+      respond_to do |format|
       if @rooftop.save
         format.html { redirect_to @rooftop, notice: 'Rooftop was successfully created.' }
         format.json { render :show, status: :created, location: @rooftop }
@@ -66,24 +62,19 @@ def create
         format.json { render json: @rooftop.errors, status: :unprocessable_entity }
       end
     end
-end
+  end
 
-def new
- @rooftop = Roof.new
-end
+  def new
+    @rooftop = Roof.new
+  end
 
 private
-def set_rooftop
-   @rooftop = Roof.find(params[:id])
-end
 
- def rooftop_params
-      params.require(:rooftop).permit(:name, :location, :price, :user_id)
-    end
+  def set_rooftop
+    @rooftop = Roof.find(params[:id])
+  end
 
-  layout "application"
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_roof, only: [:show, :edit, :update, :destroy]
-
-
+  def rooftop_params
+    params.require(:rooftop).permit(:name, :location, :price, :user_id)
+  end
 end
