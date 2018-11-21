@@ -8,12 +8,12 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
     <%= render "shared/navbar-transparent" %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-    <%#= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
