@@ -51,3 +51,12 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
+a {
+  color: #37393A;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #141415;
+  text-decoration: underline;
+}
