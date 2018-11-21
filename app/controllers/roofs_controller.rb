@@ -4,8 +4,9 @@ class RoofsController < ApplicationController
   layout 'map', only: :index
 
   def index
-    if params[:roofs][:query].present?
-      @roofs = Roof.where("location ILIKE ?", "%#{params[:roofs][:query]}%").where.not(latitude: nil, longitude: nil)
+    query = params.dig(:roofs, :query)
+    if query.present?
+      @roofs = Roof.where("location ILIKE ?", "%#{query}%").where.not(latitude: nil, longitude: nil)
 
       @markers = @roofs.map do |roof|
         {
