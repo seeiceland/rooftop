@@ -1,18 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,16,31,0.4) 10%), url(<%= image_path('search_page.png')  %>);">
   <div class="search-card"><h1 class="container1">Rent a Rooftop to make your perfect party</h1>
-    <form action="">
-      <p>Where?</p>
-      <input type="text" placeholder="City"><br>
-      <br>
-      <p>Which day?</p>
-      <input type="text" placeholder="2 nov"><br>
-      <br>
-      <p>How many persons?</p>
-      <input type="text" placeholder="3"><br>
-    </form>
-    <div class="button-go">
-      <%= link_to 'Go', roofs_path, class: "btn btn-start btn-lg" %>
-    </div>
+    <%= simple_form_for :roofs, url: roofs_path, method: :get do |f|%>
+      <%= f.input :query, collection: Roof::CITIES.sort, label: "Where?",class: "form-control",selected: 1%>
+      <%= f.input :date, as: :string %>
+      <%= f.input :people, as: :integer, label: "How many people?" %>
+      <%= f.submit "Search", class: " btn-start button-go" %>
+    <% end %>
   </div>
 </div>
 

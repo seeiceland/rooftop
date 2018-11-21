@@ -2,14 +2,20 @@ class RoofsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_roof, only: [:edit, :update, :destroy]
   layout 'map', only: :index
+
   def index
-    @roofs = Roof.where.not(latitude: nil, longitude: nil)
-    @markers = @roofs.map do |roof|
-      {
-        lng: roof.longitude,
-        lat: roof.latitude,
-        infoWindow: { content: render_to_string(partial: "/roofs/map_window", locals: { roof: roof }) }
-      }
+    if params[:roofs][:query].present?
+      @roofs = Roof.where("location ILIKE ?", "%#{params[:roofs][:query]}%").where.not(latitude: nil, longitude: nil)
+
+      @markers = @roofs.map do |roof|
+        {
+          lng: roof.longitude,
+          lat: roof.latitude,
+          infoWindow: { content: render_to_string(partial: "/roofs/map_window", locals: { roof: roof }) }
+        }
+      end
+    else
+      @roofs = Roof.all
     end
   end
 
@@ -42,7 +48,6 @@ class RoofsController < ApplicationController
     end
   end
 
-
   def destroy
     @rooftop.destroy
       respond_to do |format|
@@ -53,7 +58,7 @@ class RoofsController < ApplicationController
 
   def create
     @rooftop = Roof.new(rooftop_params)
-      respond_to do |format|
+    respond_to do |format|
       if @rooftop.save
         format.html { redirect_to @rooftop, notice: 'Rooftop was successfully created.' }
         format.json { render :show, status: :created, location: @rooftop }
@@ -68,7 +73,7 @@ class RoofsController < ApplicationController
     @rooftop = Roof.new
   end
 
-private
+  private
 
   def set_rooftop
     @rooftop = Roof.find(params[:id])
