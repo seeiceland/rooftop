@@ -1,33 +1,31 @@
-<div class="img-wrap">
-  <%#= image_tag("pic") %>
-<img src="images/rooftop.png" alt="...">
-<div class="img-caption">
-
+<div class="img-wrap"><%#= image_tag("pic") %>
+  <img src="images/rooftop.png" alt="...">
+</div>
 <div id="container-show">
+  <div class="name_show">
+      <h3>Rooftops - pool, garden</h3>
+      <p>€ 5 ,-ppm./benyehuda 138, Tel aviv</p>
   </div>
-    <h3>Rooftops - pool, garden</h3>
-    <p>€ 5 ,-ppm./benyehuda 138, Tel aviv</p>
-  </div>
-  <div class="desc-wrap">
+  <div class="desc-show">
     <h4>Description</h4>
     <p>Huge roof top is now available in this clean and spacious building.
-    there is three bar and supermarket around, and its in the central space with famous clubs around.</p>
+    there is three bar and supermarket around, and its in the central space with famous clubs around.</p><br>
     <h4>Included</h4>
-    <p>Our Rooftop has everthing you could wish for. Amazing Barbecue, fast wifi and big pool. Garden and bar of course.</p>
+    <p>Our Rooftop has everthing you could wish for. Amazing Barbecue, fast wifi and big pool. Garden and bar of course.</p><br>
     <h4>Rules</h4>
-    <p>No specific rules except that from 4 am no music allowed anymore!</p>
+    <p>No specific rules except that from 4 am no music allowed anymore!</p><br>
   </div>
 
-  <div class="form-wrap">
+  <div class="form-show">
     <%= simple_form_for [@rooftop, @booking] do |f| %>
       <%= f.input :date, as: :string %>
       <%= f.input :period, as: :hidden %>
-
-      <div>
-        <span class="period btn btn-default" id="day-button">Day</span>
-        <span class="period btn btn-default" id="night-button">Night</span>
+      <div class="container-btn">
+       <span class="period active btn btn-default" id="day-button">Day</span>
+       <span class="period btn btn-default" id="night-button">Night</span>
+     </div>
+      <div class = "submit"><%= f.submit class: "btn-start" %>
       </div>
-      <%= f.submit class: "button-submit" %>
     <% end %>
   </div>
 </div>

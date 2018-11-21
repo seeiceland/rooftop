@@ -11,3 +11,7 @@ const initPeriodButtons = function() {
 }
 
 export { initPeriodButtons };
+
+('#day-button').click(function() {
+    $(this).toggleClass('active');
+});

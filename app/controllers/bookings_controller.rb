@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    byebug
     @booking = Booking.new(booking_params)
     roof = Roof.find(params[:roof_id])
     @booking.roof = roof

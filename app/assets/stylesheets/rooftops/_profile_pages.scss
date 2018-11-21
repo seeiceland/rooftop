@@ -23,20 +23,23 @@
   background-clip: border-box;
   border: 2px solid;
   border-radius: 4px;
-}
-
-body {
-  color: #7C7C7C;
-}
-
-
-.row h4 {
+  .row h4 {
   margin: 30px;
-}
-.form-group {
+  }
+  .form-group {
   margin-bottom: 15px;
   margin: 30px;
+  }
 }
+
+.container{
+  body {
+  color: #7C7C7C;
+  }
+}
+
+
+
 
 .card-body {
   flex: 1 1 auto;
