@@ -1,6 +1,5 @@
 <div class="img-wrap">
-  <%= image_tag("pic") %>
-<img src="images/rooftop.png" alt="...">
+ <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
 <div class="img-caption">
 <h3>Rooftops - pool, garden</h3>
 <p>€ 5 ,-ppm./benyehuda 138, Tel aviv</p>
@@ -22,3 +21,4 @@ there is three bar and supermarket around, and its in the central space with fam
 <button>Night</button>
 <input type="submit" placeholder="Submit">
 </div>
+
