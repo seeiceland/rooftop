@@ -3,6 +3,7 @@ class RoofsController < ApplicationController
   before_action :set_roof, only: [:edit, :update, :destroy]
   layout 'map', only: :index
 
+ 
   def index
     query = params.dig(:roofs, :query)
     if query.present?
@@ -19,6 +20,26 @@ class RoofsController < ApplicationController
       @roofs = Roof.all
     end
   end
+
+  def new
+  @rooftop = Roof.new
+  end
+
+  def create
+  @rooftop = Roof.new(rooftop_params)
+  @rooftop.user = current_user
+      respond_to do |format|
+        if @rooftop.save
+          format.html { redirect_to @rooftop, notice: 'Rooftop was successfully created.' }
+          format.json { render :show, status: :created, location: @rooftop }
+        else
+          format.html { render :new }
+          format.json { render json: @rooftop.errors, status: :unprocessable_entity }
+        end
+      end
+  end
+
+
 
   def show
     @booking = Booking.new
@@ -46,7 +67,6 @@ class RoofsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @rooftop.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   def destroy
@@ -74,13 +94,14 @@ class RoofsController < ApplicationController
     @rooftop = Roof.new
   end
 
-  private
+ private
+    
+ def rooftop_params
+      params.require(:roof).permit(:name, :location, :price, :user_id,:photo,:photo_cache)
+ end
+end
+  
 
   def set_rooftop
     @rooftop = Roof.find(params[:id])
   end
-
-  def rooftop_params
-    params.require(:rooftop).permit(:name, :location, :price, :user_id)
-  end
-end

@@ -1,5 +1,6 @@
-<div class="img-wrap"><%#= image_tag("pic") %>
-  <img src="images/rooftop.png" alt="...">
+<div class="img-wrap">
+ <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
+
 </div>
 <div id="container-show">
   <div class="name_show">
@@ -29,3 +30,4 @@
     <% end %>
   </div>
 </div>
+

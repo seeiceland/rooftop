@@ -6,4 +6,5 @@ class Roof < ApplicationRecord
   has_many :bookings
   validates :name, uniqueness: true, presence: true
   validates :price, presence: true
+    mount_uploader :photo, PhotoUploader
 end
