@@ -21,7 +21,7 @@ gem 'devise'
 gem "geocoder"
 gem "mapbox"
 gem 'carrierwave', '~> 1.2'
-  gem 'faker'
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

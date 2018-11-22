@@ -15,6 +15,7 @@ User.create!(email: 'leah@gmail.com', password: '123456')
 puts "Created #{User.count} users!"
 
 
+
 Roof.create!({
   name: 'Mamilla Hotel Rooftop Lounge and Restaurant',
   location: 'Shlomo ha-Melekh 11, Tel-Aviv',
@@ -29,6 +30,29 @@ Roof.create!( name: 'Polihouse', location: 'Nahalat Binyamin St 1,Tel-Aviv', pri
 Roof.create!( name: 'Roof face to the beach', location: 'Tel-Aviv', price: 30, user: random_user,  remote_photo_url: 'https://images.unsplash.com/photo-1513279922550-250c2129b13a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ab44925abfac230b479589e22b1cc50&auto=format&fit=crop&w=750&q=80' )
 Roof.create!( name: 'Azrieli rooftop', location: 'Tel-Aviv', price: 20, user: random_user, remote_photo_url: 'https://images.unsplash.com/photo-1498378520120-901cc2e4547e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d3738c26c7b955003d03ea45f4536015&auto=format&fit=crop&w=753&q=80' )
 Roof.create!( name: 'Benyehuda Street', location: 'Tel-Aviv', price: 30, user: random_user, remote_photo_url: 'https://images.unsplash.com/photo-1483090858014-15e35bb60ea5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=30103cd1fe3ff7fe3f78446cdd87e901&auto=format&fit=crop&w=333&q=80' )
+
+Roof.create!( name: 'Dan Hotel Rooftop', location: 'Kaufmann 10, Tel-Aviv', price: 150, user: random_user)
+Roof.create!( name: 'Speakeasy', location: 'Rothschild Blvd 24, Tel-Aviv', price: 15, user: random_user )
+Roof.create!( name: 'Esperanto Rooftop', location: 'Beach, Tel-Aviv', price: 25, user: random_user )
+Roof.create!( name: 'Beach view', location: 'Eliezer Peri 10, Tel-Aviv', price: 30, user: random_user )
+Roof.create!( name: 'Polihouse', location: 'Nahalat Binyamin 1, Tel-Aviv', price: 20, user: random_user )
+Roof.create!( name: 'Roof face to the beach', location: 'HaYarkon 115, Tel-Aviv', price: 30, user: random_user )
+Roof.create!( name: 'Azrieli rooftop', location: 'Derech Menachem Begin 132, Tel-Aviv', price: 20, user: random_user )
+Roof.create!( name: 'The prince', location: 'Nahalat Binyamin 18, Tel-Aviv', price: 30, user: random_user )
+
+Roof.create!( name: 'Mamilla Hotel Lounge', location: 'Shlomo ha-Melekh 11, Jerusalem', price: 5, user: random_user)
+Roof.create!( name: 'The Eucalyptus', location: 'Simtat Pelet 14, Jerusalem', price: 100, user: random_user )
+Roof.create!( name: 'M-Yehuda Rooftop', location: 'Machane Yehuda 13, Jerusalem', price: 25, user: random_user )
+Roof.create!( name: 'Kotel view', location: 'Ha-Kotel 12, Jerusalem', price: 60, user: random_user )
+Roof.create!( name: 'Houserabbi', location: 'Ha-Yehudim 91, Jerusalem', price: 20, user: random_user )
+
+Roof.create!( name: 'Kchatot Rooftop', location: 'Mafkura 1, Ashdod', price: 5, user: random_user)
+Roof.create!( name: 'Speakehard', location: 'Menachem Begin Blvd 126, Ashdod', price: 15, user: random_user )
+Roof.create!( name: 'Mall Rooftop', location: 'Big Fashion, Ashdod', price: 70, user: random_user )
+Roof.create!( name: 'Yam-park view', location: 'Derech Eretz 8, Ashdod', price: 30, user: random_user )
+Roof.create!( name: 'Ashdod coffee Roof', location: 'Onyon 5, Ashdod', price: 20, user: random_user )
+
+
 
 puts "Created #{Roof.count} rooftops!"
 
