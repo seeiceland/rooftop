@@ -4,13 +4,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    byebug
     @booking = Booking.new(booking_params)
     roof = Roof.find(params[:roof_id])
     @booking.roof = roof
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path, notice: 'Your booking was successfully created.'
+      redirect_to dashboard_path, notice: 'Your booking was successfully created.'
     else
       render 'roofs/show', notice: 'Something went wrong. Could not book roof!'
     end
