@@ -1,13 +1,12 @@
 const initPeriodButtons = function() {
-  const periodInput = document.getElementById('booking_period');
+  const periodInputs = document.querySelectorAll('.time-button');
 
-  if (periodInput) {
-    const dayBtn = document.getElementById('day-button');
-    const nightBtn = document.getElementById('night-button');
-
-    dayBtn.addEventListener('click', () => periodInput.value = 'day');
-    nightBtn.addEventListener('click', () => periodInput.value = 'night');
-  }
+  periodInputs.forEach((element) =>{
+    element.addEventListener("click",()=>{
+      periodInputs.forEach(element => element.classList.remove('on_this'));
+      element.classList.add("on_this")
+    })
+  })
 }
 
 export { initPeriodButtons };
