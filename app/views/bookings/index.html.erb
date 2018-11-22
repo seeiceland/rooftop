@@ -17,7 +17,7 @@
             <th scope="row"><%= index + 1 %></th>
             <td><%= booking.roof.name %></td>
             <td><%= booking.period.capitalize %></td>
-            <td><%= booking.price %></td>
+            <td><%= booking.roof.price %></td>
             <td>
               <% if booking.date != nil  %>
                 <%= booking.date.strftime('%d %B %Y') %>
