@@ -1,5 +1,5 @@
-<div class="img-wrap">
- <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
+<div class="img-wrap" class="photo">
+ <%= cl_image_tag @rooftop.photo,  height: 200, width: 400, crop: :fill %>
 
 </div>
 <div id="container-show">
@@ -22,8 +22,8 @@
       <%= f.input :date, as: :string %>
       <%= f.input :period, as: :hidden %>
       <div class="container-btn">
-       <span class="period active btn btn-default" id="day-button">Day</span>
-       <span class="period btn btn-default" id="night-button">Night</span>
+       <span class="period on_this btn btn-default time-button" id="day">Day</span>
+       <span class="period btn btn-default time-button" id="night">Night</span>
      </div>
       <div class = "submit"><%= f.submit class: "btn-start" %>
       </div>
