@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  layout 'profile_layout'
   def index
     @bookings = Booking.all
   end
