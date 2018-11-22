@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     roof = Roof.find(params[:roof_id])
     @booking.roof = roof
     @booking.user = current_user
+    # raise
     if @booking.save
       redirect_to dashboard_path, notice: 'Your booking was successfully created.'
     else
