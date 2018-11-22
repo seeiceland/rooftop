@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     # raise
     if @booking.save
-      redirect_to dashboard_path, notice: 'Your booking was successfully created.'
+      redirect_to bookings_path, notice: 'Your booking was successfully created.'
     else
       render 'roofs/show', notice: 'Something went wrong. Could not book roof!'
     end
