@@ -8,7 +8,7 @@
           <th scope="col">Day / Night</th>
           <th scope="col">Price</th>
           <th scope="col">Date</th>
-          <th scope="col">Approved</th>
+          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +22,7 @@
               <% if booking.date != nil  %>
                 <%= booking.date.strftime('%d %B %Y') %>
               <% end %>
+              <td class= "approved" >Confirmed</td>
             </td>
           <td><%=  %></td>
           </tr>
