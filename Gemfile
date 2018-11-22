@@ -14,7 +14,7 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary'
+gem 'cloudinary', '1.9.1'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
@@ -28,7 +28,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'

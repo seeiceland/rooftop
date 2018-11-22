@@ -80,6 +80,7 @@ class RoofsController < ApplicationController
 
   def create
     @rooftop = Roof.new(rooftop_params)
+    @rooftop.user = current_user
     respond_to do |format|
       if @rooftop.save
         format.html { redirect_to @rooftop, notice: 'Rooftop was successfully created.' }
